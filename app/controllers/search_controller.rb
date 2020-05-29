@@ -21,5 +21,7 @@ class SearchController < ApplicationController
 
    json_2 = JSON.parse(response_2.body, symbolize_names: true)
 
+   @number = json_2[:num_results]
+   @reviews = json_2[:results]
   end
 end

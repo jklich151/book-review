@@ -17,9 +17,8 @@ RSpec.describe 'As a User' do
     end
 
     within ('.reviews') do
-      expect(page).to have_css('.number-of-reviews')
-      expect(page).to have_css('.review-1-text')
-      expect(page).to have_css('.review-2-text')
+      expect(page).to have_content('This book has 2 reviews from the New York Times')
+      expect(page).to have_css('.review-text')
     end
   end
 end
