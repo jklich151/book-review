@@ -6,4 +6,12 @@ class SearchFacade
       Info.new(book_data)
     end
   end
+
+  def reviews(title)
+    json = TimesService.new.book_reviews(title)
+
+    @reviews = json[:results].map do |review_data|
+      Review.new(review_data)
+    end
+  end
 end

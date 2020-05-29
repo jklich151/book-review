@@ -10,6 +10,6 @@
 <section class="reviews">
   <h3>This book has <%= @number %> reviews from the New York Times </h3>
   <% @reviews.each do |review| %>
-    <p class="review-text"><%= review[:summary] %></p>
+    <p class="review-text"><%= review.summary %></p>
   <% end %>
 </section>
