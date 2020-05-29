@@ -1,8 +1,10 @@
   <ul class="book-info">
+    <% @book_info.each do |info| %>
     <li class="title"><%= info.title %></li>
     <li class="author"><%= info.author %></li>
     <li class="publisher"><%= info.publisher %></li>
   </ul>
+  <% end %>
 
 
 <section class="reviews">

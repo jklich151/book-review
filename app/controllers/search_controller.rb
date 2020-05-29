@@ -5,7 +5,6 @@ class SearchController < ApplicationController
     @book_info = search_results.book_info(title)
 
 
-
    conn_2 = Faraday.new(url: "https://api.nytimes.com") do |faraday|
      faraday.params["api-key"] = ENV['BOOK_KEY']
      faraday.params['title'] = title
