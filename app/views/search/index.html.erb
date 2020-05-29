@@ -1,8 +1,10 @@
   <ul class="book-info">
-    <li class="title"><%= @book_info[:title_suggest] %></li>
-    <li class="author"><%= @book_info[:author_name] %></li>
-    <li class="publisher"><%= @book_info[:publisher] %></li>
+    <li class="title"><%= info.title %></li>
+    <li class="author"><%= info.author %></li>
+    <li class="publisher"><%= info.publisher %></li>
   </ul>
+
+
 <section class="reviews">
   <h3>This book has <%= @number %> reviews from the New York Times </h3>
   <% @reviews.each do |review| %>

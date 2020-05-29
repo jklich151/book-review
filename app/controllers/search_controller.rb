@@ -1,15 +1,9 @@
 class SearchController < ApplicationController
   def index
-    title = params[:title]
+    title = (params[:title])
+    search_results = SearchFacade.new
+    @book_info = search_results.book_info(title)
 
-   conn = Faraday.new(url: "http://openlibrary.org") do |faraday|
-    faraday.params['title'] = title
-   end
-
-   response = conn.get("/search.json?")
-
-   json = JSON.parse(response.body, symbolize_names: true)
-   @book_info = json[:docs][0]
 
 
    conn_2 = Faraday.new(url: "https://api.nytimes.com") do |faraday|
